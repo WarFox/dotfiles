@@ -1,0 +1,9 @@
+* TODO Backup dotfiles [66%]
+  :LOGBOOK:
+  CLOCK: [2017-05-17 Wed 15:30]--[2017-05-17 Wed 15:55] =>  0:25
+  :END:
+  - [X] Spacemacs
+    - [X] snippets - create new snippets repo
+  - [X] checkout sample dotfiles [1/1]
+    - [X] https://dotfiles.github.io/
+  - [ ] vim

@@ -1,0 +1,3 @@
+[submodule "spacemacs.d/snippets"]
+	path = spacemacs.d/snippets
+	url = git@github.com:WarFox/yasnippet-snippets.git
