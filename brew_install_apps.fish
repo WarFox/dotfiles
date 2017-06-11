@@ -7,6 +7,12 @@ function brew_install_extra_stuff
   brew install ant
 end
 
+function install_emacs_plus
+ brew tap d12frosted/emacs-plus
+ brew install emacs-plus
+ brew linkapps emacs-plus
+end
+
 function brew_install_stuff
   brew install Caskroom/cask/wercker-cli
   brew install apache-spark
@@ -58,6 +64,7 @@ function brew_install_stuff
 end
 
 function brew_cask_install_stuff
+  brew cask install java
   brew cask install VirtualBox
   brew cask install apache-spark
   brew cask install atom
@@ -68,7 +75,6 @@ function brew_cask_install_stuff
   brew cask install gitter
   brew cask install google-chrome
   brew cask install google-drive
-  brew cask install java
   brew cask install jprofiler
   brew cask install keycastr
   brew cask install kitematic
