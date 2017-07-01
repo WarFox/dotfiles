@@ -7,3 +7,5 @@
   - [X] checkout sample dotfiles [1/1]
     - [X] https://dotfiles.github.io/
   - [ ] vim
+* DONE move spacemacs.d to separate directory
+  CLOSED: [2017-07-01 Sat 23:54]
