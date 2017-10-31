@@ -1,4 +1,4 @@
-* TODO Backup dotfiles [66%]
+* TODO Backup dotfiles [75%]
   :LOGBOOK:
   CLOCK: [2017-05-17 Wed 15:30]--[2017-05-17 Wed 15:55] =>  0:25
   :END:
@@ -7,5 +7,12 @@
   - [X] checkout sample dotfiles [1/1]
     - [X] https://dotfiles.github.io/
   - [ ] vim
+  - [X] .jsbeautifyrc
 * DONE move spacemacs.d to separate directory
   CLOSED: [2017-07-01 Sat 23:54]
+* TODO Use Ansible
+* DONE Have a Global Git ignore
+  CLOSED: [2017-10-25 Wed 16:37]
+#+BEGIN_SRC
+git config --global core.excludesfile ~/.gitignore_global
+#+END_SRC
