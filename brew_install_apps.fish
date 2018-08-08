@@ -56,6 +56,7 @@ end
 
 function brew_cask_install_stuff
   brew cask install atom
+  brew cask install alfred
   brew cask install docker
   brew cask install dropbox
   brew cask install firefox
