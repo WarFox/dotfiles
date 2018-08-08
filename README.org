@@ -1,3 +1,7 @@
 #+TITLE: Deepu Mohan Puthrote's dotfiles
 
 I just want to start tracking my dotfiles.
+
+* Steps
+- run =setup_brew_and_fish.sh=
+- run =setup.fish= from fish shell
