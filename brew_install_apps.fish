@@ -39,7 +39,7 @@ function brew_install_stuff
   brew install nodejs
   brew install pstree
   brew install pyenv
-  brew install rbenv
+  brew install ruby-build rbenv
   brew install reattach-to-user-namespace
   # search tools
   brew install ripgrep sift pt ag
@@ -75,5 +75,13 @@ function brew_cask_install_stuff
 end
 
 function yarn_install_stuff
-    yarn add global vmd js-beautify
+   yarn global add vmd js-beautify tern
+end
+
+function omf_install_stuff
+   omf install z simple-ass-prompt fuck
+end
+
+function gem_install_stuff
+    gem install bundler
 end

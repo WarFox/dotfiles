@@ -11,6 +11,7 @@ end
 function setup_softlinks
   ln -s ~/Workspace/Personal/dotfiles/spacemacs.d ~/.spacemacs.d
   ln -s ~/Workspace/Personal/dotfiles/.jsbeautifyrc ~/.jsbeautifyrc
+  ln -s ~/Workspace/Personal/dotfiles/.sift.conf ~/.sift.conf
 end
 
 function setup_oh_my_tmux
@@ -34,3 +35,5 @@ setup_softlinks
 brew_install_stuff
 brew_cask_install_stuff
 yarn_install_stuff
+omf_install_stuff
+gem_install_stuff
