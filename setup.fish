@@ -12,6 +12,8 @@ function setup_softlinks
   ln -s ~/Workspace/Personal/dotfiles/spacemacs.d ~/.spacemacs.d
   ln -s ~/Workspace/Personal/dotfiles/.jsbeautifyrc ~/.jsbeautifyrc
   ln -s ~/Workspace/Personal/dotfiles/.sift.conf ~/.sift.conf
+  ln -s ~/Workspace/Personal/dotfiles/.gitignore_global ~/.gitignore_global
+  ln -s ~/Workspace/Personal/dotfiles/.chunkwmrc ~/.chunkwmrc
 end
 
 function setup_oh_my_tmux
@@ -22,7 +24,6 @@ function setup_oh_my_tmux
 end
 
 # Set up global git-ignore
-echo "TODOs.org" >> ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
 install_fonts

@@ -1,0 +1,19 @@
+TODOs.org
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+#FC
+logfile
+
+# Clojure
+.nrepl-*
+
+# User Defined
+*.md.temp
+
+#Python
+venv

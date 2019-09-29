@@ -22,6 +22,7 @@ function brew_install_stuff
   brew install aspell
   brew install awscli
   brew install boot-clj
+  brew install cmake
   brew install coreutils
   brew install gnutls
   brew install golang
