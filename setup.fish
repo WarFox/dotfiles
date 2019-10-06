@@ -19,7 +19,7 @@ end
 function setup_oh_my_tmux
     git clone https://github.com/gpakosz/.tmux.git ~/Workspace/GitHub/.tmux
     ln -s ~/Workspace/GitHub/.tmux/.tmux.conf ~/.tmux.conf
-    cp ~/Workspace/GitHub/.tmux/.tmux.conf.local ~/
+    ln -s ~/Workspace/Personal/dotfiles/.tmux.conf.local ~/.tmux.conf.local
     brew install tmux
 end
 
