@@ -21,6 +21,7 @@ function setup_oh_my_tmux
     ln -s ~/Workspace/GitHub/.tmux/.tmux.conf ~/.tmux.conf
     ln -s ~/Workspace/Personal/dotfiles/.tmux.conf.local ~/.tmux.conf.local
     brew install tmux
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 end
 
 # Set up global git-ignore
