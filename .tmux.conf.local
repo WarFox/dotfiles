@@ -231,7 +231,7 @@ tmux_conf_battery_vbar_palette='gradient'
 # tmux_conf_battery_status_charging='↑'       # U+2191
 # tmux_conf_battery_status_discharging='↓'    # U+2193
 tmux_conf_battery_status_charging='⚡ '    # U+26A1
-tmux_conf_battery_status_charging='🔌 '    # U+1F50C
+# tmux_conf_battery_status_charging='🔌 '    # U+1F50C
 tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
 
 # clock style
@@ -271,7 +271,10 @@ set -g mouse on
 # bind C-a send-prefix
 
 # move status line to top
-#set -g status-position top
+set -g status-position top
+
+# set xterm-keys on to send terminal keys
+set-option -g xterm-keys on
 
 # https://github.com/tmux-plugins/tpm/blob/master/docs/tpm_not_working.md
 set -g @tpm_plugins '          \
@@ -280,9 +283,6 @@ set -g @tpm_plugins '          \
    tmux-plugins/tmux-continuum  \
    tmux-plugins/tmux-resurrect  \
    '
-
-#set xterm-keys on to send terminal keys
-set-option -g xterm-keys on
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
