@@ -16,4 +16,5 @@ logfile
 *.md.temp
 
 #Python
+.venv
 venv

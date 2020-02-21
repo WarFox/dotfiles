@@ -14,12 +14,16 @@ function setup_softlinks
   ln -s ~/Workspace/Personal/dotfiles/.sift.conf ~/.sift.conf
   ln -s ~/Workspace/Personal/dotfiles/.gitignore_global ~/.gitignore_global
   ln -s ~/Workspace/Personal/dotfiles/.chunkwmrc ~/.chunkwmrc
+  ln -s ~/Workspace/Personal/dotfiles/.skhdrc ~/.skhdrc
+  mkdir -p ~/.config/alacritty/
+  ln -s ~/Workspace/Personal/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/
 end
 
 function setup_oh_my_tmux
     git clone https://github.com/gpakosz/.tmux.git ~/Workspace/GitHub/.tmux
     ln -s ~/Workspace/GitHub/.tmux/.tmux.conf ~/.tmux.conf
     ln -s ~/Workspace/Personal/dotfiles/.tmux.conf.local ~/.tmux.conf.local
+    mkdir -p ~/.tmux/plugins/
     brew install tmux
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 end
