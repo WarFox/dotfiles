@@ -1,12 +1,12 @@
 function install_fonts
     # Setup fonts
-    brew tap caskroom/fonts
+    brew tap homebrew/cask-fonts
     brew cask install font-sourcecodepro-nerd-font font-sourcecodepro-nerd-font-mono font-hack-nerd-font font-hack-nerd-font-mono
 end
 
 function install_emacs_plus
  brew tap d12frosted/emacs-plus
- brew install emacs-plus
+ brew install emacs-plus --with-xwidgets --with-jannson
  brew linkapps emacs-plus
 end
 

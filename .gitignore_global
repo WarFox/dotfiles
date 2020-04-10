@@ -18,3 +18,4 @@ logfile
 #Python
 .venv
 venv
+.mypy_cache
