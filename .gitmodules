@@ -1,3 +1,0 @@
-[submodule "spacemacs.d"]
-	path = spacemacs.d
-	url = git@github.com:WarFox/spacemacs.d.git
