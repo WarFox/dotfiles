@@ -4,17 +4,21 @@ source ./brew_install_apps.fish
 
 brew_install_java
 
-function clone_spacemacs
-  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-end
+git clone git@github.com:syl20bnr/spacemacs.git ~/Workspace/GitHub/syl20bnr/spacemacs
+git clone git@github.com:hlissner/doom-emacs.git ~/Workspace/GitHub/hlissner/doom-emacs
+git clone git@github.com:plexus/chemacs.git ~/Workspace/GitHub/plexus/chemacs
+~/Workspace/GitHub/plexus/chemacs/install.sh
 
 function setup_softlinks
-  ln -s ~/Workspace/Personal/dotfiles/spacemacs.d ~/.spacemacs.d
+  ln -s ~/Workspace/Personal/spacemacs.d ~/.spacemacs.d
+  ln -s ~/Workspace/Personal/doom.d ~/.doom.d
   ln -s ~/Workspace/Personal/dotfiles/.jsbeautifyrc ~/.jsbeautifyrc
   ln -s ~/Workspace/Personal/dotfiles/.sift.conf ~/.sift.conf
   ln -s ~/Workspace/Personal/dotfiles/.gitignore_global ~/.gitignore_global
   ln -s ~/Workspace/Personal/dotfiles/.chunkwmrc ~/.chunkwmrc
   ln -s ~/Workspace/Personal/dotfiles/.skhdrc ~/.skhdrc
+  ln -s ~/Workspace/Personal/dotfiles/.emacs-profiles ~/.emacs-profiles
+  ln -s ~/Workspace/Personal/dotfiles/.emacs-profile ~/.emacs-profile
   mkdir -p ~/.config/alacritty/
   ln -s ~/Workspace/Personal/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/
 end
@@ -35,7 +39,6 @@ install_fonts
 
 # Emacs
 install_emacs_plus
-clone_spacemacs
 setup_softlinks
 
 brew_install_stuff
