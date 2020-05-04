@@ -99,15 +99,3 @@ set -gx PKG_CONFIG_PATH "/usr/local/opt/ncurses/lib/pkgconfig $PKG_CONFIG_PATH"
 
 # For compilers to find openjdk you may need to set:
 set -gx CPPFLAGS "-I/usr/local/opt/openjdk/include $CPPFLAGS"
-
-
-# ==> pyenv-virtualenv
-# To enable auto-activation add to your profile:
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-
-# ==> jenv
-# To activate jenv, add the following to your ~/.config/fish/config.fish:
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"

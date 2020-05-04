@@ -9,6 +9,15 @@ git clone git@github.com:hlissner/doom-emacs.git ~/Workspace/GitHub/hlissner/doo
 git clone git@github.com:plexus/chemacs.git ~/Workspace/GitHub/plexus/chemacs
 ~/Workspace/GitHub/plexus/chemacs/install.sh
 
+function make_links -a source_dir target_dir -d "make links for multiple files in the directory"
+    for f in $source_dir/*;
+        if test -f $f
+            echo ln -s $f $target_dir/(basename $f)
+            ln -s $f $target_dir/(basename $f)
+        end
+    end
+end
+
 function setup_softlinks
   ln -s ~/Workspace/Personal/spacemacs.d ~/.spacemacs.d
   ln -s ~/Workspace/Personal/doom.d ~/.doom.d
@@ -21,6 +30,8 @@ function setup_softlinks
   ln -s ~/Workspace/Personal/dotfiles/.emacs-profile ~/.emacs-profile
   mkdir -p ~/.config/alacritty/
   ln -s ~/Workspace/Personal/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/
+
+  make_links  ~/Workspace/Personal/dotfiles/.config/omf ~/.config/omf
 end
 
 function setup_oh_my_tmux

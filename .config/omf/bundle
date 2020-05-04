@@ -1,0 +1,10 @@
+package emacs
+package fasd
+package foreign-env
+package https://github.com/jhillyerd/plugin-git
+package node
+package node-binpath
+package pyenv
+package sdk
+theme default
+theme simple-ass-prompt
