@@ -17,7 +17,7 @@ function setup_softlinks
   ln -s ~/Workspace/Personal/dotfiles/.gitignore_global ~/.gitignore_global
   ln -s ~/Workspace/Personal/dotfiles/.chunkwmrc ~/.chunkwmrc
   ln -s ~/Workspace/Personal/dotfiles/.skhdrc ~/.skhdrc
-  ln -s ~/Workspace/Personal/dotfiles/.emacs-profiles ~/.emacs-profiles
+  ln -s ~/Workspace/Personal/dotfiles/.emacs-profiles.el ~/.emacs-profiles.el
   ln -s ~/Workspace/Personal/dotfiles/.emacs-profile ~/.emacs-profile
   mkdir -p ~/.config/alacritty/
   ln -s ~/Workspace/Personal/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/

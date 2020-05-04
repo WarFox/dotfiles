@@ -80,7 +80,7 @@ function yarn_install_stuff
 end
 
 function omf_install_stuff
-   omf install z simple-ass-prompt fuck
+   omf install z simple-ass-prompt
 end
 
 function gem_install_stuff
