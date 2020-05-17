@@ -1,5 +1,10 @@
-# LDFLAGS refers for linker flags and is often user defined librarie $LDFLAGSs
-# CPPLAGS is used by the preprocessor and is often the include directory
+#
+#
+# LDFLAGS refers for linker flags and is often user defined librarie $LDFLAGSs  #
+# CPPLAGS is used by the preprocessor and is often the include directory        #
+#
+#
+
 
 # ==> zlib
 set -gx LDFLAGS "-L/usr/local/opt/zlib/lib $LDFLAGS $LDFLAGS $LDFLAGS"

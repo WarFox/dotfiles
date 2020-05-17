@@ -12,6 +12,8 @@ status --is-interactive; and pyenv virtualenv-init - | source
 set dir (dirname (status -f))
 source $dir/libflags.fish
 
+# blast off with starship
+starship init fish | source
 
 # ==> local settings and overrides
 source $dir/init.local.fish

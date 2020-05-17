@@ -31,6 +31,8 @@ function setup_softlinks
   mkdir -p ~/.config/alacritty/
   ln -s ~/Workspace/Personal/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/
 
+  ln -s ~/Workspace/Personal/dotfiles/.config/starship.toml  ~/.config/starship.toml
+
   make_links  ~/Workspace/Personal/dotfiles/.config/omf ~/.config/omf
 end
 

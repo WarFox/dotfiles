@@ -1,0 +1,64 @@
+# https://starship.rs/config/
+
+[aws]
+style = "bold blue"
+symbol = "aws:"
+displayed_items = "all"
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡"
+charging_symbol = "🔌"
+disabled = false
+
+[character]
+symbol = "➜"
+use_symbol_for_status = true
+
+[directory]
+truncation_length = 8
+
+[git_branch]
+symbol = ":"
+truncation_length = 2^63 - 1
+style = "bold yellow"
+
+[git_state]
+progress_divider = " of "
+cherry_pick = "🍒 PICKING"
+
+[git_status]
+conflicted = "⚔ "
+ahead = "🏎 💨 "
+behind = "🐢 "
+diverged = "🔱 "
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+staged = "🗃"
+staged.value = "++"
+staged.style = "green"
+staged_count.enabled = true
+staged_count.style = "green"
+renamed = "📛"
+deleted = "🗑"
+prefix = ""
+suffix = ""
+style = "bright-white"
+
+[hostname]
+ssh_only = true
+prefix = "<"
+suffix = ">"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = false
+
+[time]
+format = "🕙 %T"
+style = "bright-white"
+disabled = false
+
+[username]
+style_user = "bold dimmed blue"
+show_always = true
