@@ -1,5 +1,13 @@
 # https://starship.rs/config/
 
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the newline at the start of the prompt
+add_newline = false
+
+format = "$all"
+
 [aws]
 style = "bold blue"
 symbol = "aws:"
@@ -7,57 +15,51 @@ displayed_items = "all"
 
 [battery]
 full_symbol = "🔋"
-charging_symbol = "⚡"
+discharging_symbol = "⚡"
 charging_symbol = "🔌"
-disabled = false
 
 [character]
-symbol = "➜"
-use_symbol_for_status = true
+success_symbol = "[➜](bold green) 😃"
+error_symbol = "[✗](bold red) 🤕"
 
 [directory]
 truncation_length = 8
 
 [git_branch]
 symbol = ":"
-truncation_length = 2^63 - 1
-style = "bold yellow"
+truncation_length = 63
+truncation_symbol = "..."
+style = "bold purple"
 
 [git_state]
 progress_divider = " of "
 cherry_pick = "🍒 PICKING"
 
 [git_status]
-conflicted = "⚔ "
-ahead = "🏎 💨 "
-behind = "🐢 "
-diverged = "🔱 "
+format= '([\[$all_status$ahead_behind\]]($style)) '
+conflicted = "⚔"
+ahead = "🏎💨${count}"
+behind = "🐢$count}"
+diverged = "🔱 ⇡${ahead_count}⇣${behind_count}"
 untracked = "🤷"
 stashed = "📦"
 modified = "📝"
-staged = "🗃"
-staged.value = "++"
-staged.style = "green"
-staged_count.enabled = true
-staged_count.style = "green"
+staged = "++$count"
 renamed = "📛"
 deleted = "🗑"
-prefix = ""
-suffix = ""
-style = "bright-white"
+style =  "bold red"
 
 [hostname]
 ssh_only = true
-prefix = "<"
-suffix = ">"
 trim_at = "-"
 style = "bold dimmed white"
 disabled = false
 
 [time]
-format = "🕙 %T"
-style = "bright-white"
-disabled = false
+format = "🕙[$time]($style)"
+style	= "bold yellow"
+time_format = "%T"
+disabled = true
 
 [username]
 style_user = "bold dimmed blue"
