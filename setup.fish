@@ -1,9 +1,5 @@
 #!/usr/bin/env fish
 
-source ./brew_install_apps.fish
-
-brew_install_java
-
 git clone git@github.com:syl20bnr/spacemacs.git ~/Workspace/GitHub/syl20bnr/spacemacs
 git clone git@github.com:hlissner/doom-emacs.git ~/Workspace/GitHub/hlissner/doom-emacs
 git clone git@github.com:plexus/chemacs.git ~/Workspace/GitHub/plexus/chemacs
@@ -31,10 +27,10 @@ function setup_softlinks
   mkdir -p ~/.config/alacritty/
   ln -s ~/Workspace/Personal/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/
 
-  ln -s ~/Workspace/Personal/dotfiles/.config/starship.toml  ~/.config/starship.toml
 
   make_links  ~/Workspace/Personal/dotfiles/.config/omf ~/.config/omf
 end
+
 
 function setup_oh_my_tmux
     git clone https://github.com/gpakosz/.tmux.git ~/Workspace/GitHub/.tmux
@@ -48,14 +44,11 @@ end
 # Set up global git-ignore
 git config --global core.excludesfile ~/.gitignore_global
 
-install_fonts
+source ./brew_install_apps.fish
 
-# Emacs
-install_emacs_plus
+brew bundle
+
 setup_softlinks
-
-brew_install_stuff
-brew_cask_install_stuff
 yarn_install_stuff
 omf_install_stuff
 gem_install_stuff
