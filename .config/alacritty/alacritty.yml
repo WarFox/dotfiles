@@ -361,6 +361,7 @@ shell:
  program: /usr/local/bin/fish
  args:
    - --login
+   - -c tmux new-session -A -s main
 
 # Startup directory
 #
