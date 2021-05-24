@@ -9,14 +9,16 @@ add_newline = false
 format = "$all"
 
 [aws]
-style = "bold blue"
 symbol = "aws:"
-displayed_items = "all"
 
 [battery]
 full_symbol = "🔋"
 discharging_symbol = "⚡"
 charging_symbol = "🔌"
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
 
 [character]
 success_symbol = "[➜](bold green) 😃"
@@ -32,7 +34,7 @@ truncation_symbol = "..."
 style = "bold purple"
 
 [git_state]
-progress_divider = " of "
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
 cherry_pick = "🍒 PICKING"
 
 [git_status]
@@ -55,12 +57,12 @@ trim_at = "-"
 style = "bold dimmed white"
 disabled = false
 
-[time]
-format = "🕙[$time]($style)"
-style	= "bold yellow"
-time_format = "%T"
-disabled = true
+[nodejs]
+format = "via [$symbol($version )]($style)"
+symbol = "⬢ "
 
 [username]
+format = "[$user]($style) "
 style_user = "bold dimmed blue"
+style_root = "black bold"
 show_always = true
