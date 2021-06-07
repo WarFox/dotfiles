@@ -8,8 +8,9 @@ git clone git@github.com:plexus/chemacs.git ~/Workspace/GitHub/plexus/chemacs
 function make_links -a source_dir target_dir -d "make links for multiple files in the directory"
     for f in $source_dir/*;
         if test -f $f
-            echo ln -s $f $target_dir/(basename $f)
-            ln -s $f $target_dir/(basename $f)
+            set _command ln -s $f $target_dir/(basename $f)
+            echo $_command
+            eval "$_command"
         end
     end
 end
@@ -17,18 +18,19 @@ end
 function setup_softlinks
   ln -s ~/Workspace/Personal/spacemacs.d ~/.spacemacs.d
   ln -s ~/Workspace/Personal/doom.d ~/.doom.d
-  ln -s ~/Workspace/Personal/dotfiles/.jsbeautifyrc ~/.jsbeautifyrc
-  ln -s ~/Workspace/Personal/dotfiles/.sift.conf ~/.sift.conf
-  ln -s ~/Workspace/Personal/dotfiles/.gitignore_global ~/.gitignore_global
-  ln -s ~/Workspace/Personal/dotfiles/.chunkwmrc ~/.chunkwmrc
-  ln -s ~/Workspace/Personal/dotfiles/.skhdrc ~/.skhdrc
-  ln -s ~/Workspace/Personal/dotfiles/.emacs-profiles.el ~/.emacs-profiles.el
-  ln -s ~/Workspace/Personal/dotfiles/.emacs-profile ~/.emacs-profile
-  mkdir -p ~/.config/alacritty/
-  ln -s ~/Workspace/Personal/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/
 
+  # sym link dotfiles
+  ln -s (pwd)/.chunkwmrc ~/.chunkwmrc
+  ln -s (pwd)/.emacs-profile ~/.emacs-profile
+  ln -s (pwd)/.emacs-profiles.el ~/.emacs-profiles.el
+  ln -s (pwd)/.gitignore_global ~/.gitignore_global
+  ln -s (pwd)/.jsbeautifyrc ~/.jsbeautifyrc
+  ln -s (pwd)/.sift.conf ~/.sift.conf
+  ln -s (pwd)/.skhdrc ~/.skhdrc
 
-  make_links  ~/Workspace/Personal/dotfiles/.config/omf ~/.config/omf
+  ln -s (pwd)/.config/alacritty/alacritty.yml ~/.config/alacritty/
+
+  make_links (pwd)/.config/fish ~/.config/fish
 end
 
 
