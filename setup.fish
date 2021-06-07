@@ -1,9 +1,8 @@
 #!/usr/bin/env fish
 
-git clone git@github.com:syl20bnr/spacemacs.git ~/Workspace/GitHub/syl20bnr/spacemacs
-git clone git@github.com:hlissner/doom-emacs.git ~/Workspace/GitHub/hlissner/doom-emacs
-git clone git@github.com:plexus/chemacs.git ~/Workspace/GitHub/plexus/chemacs
-~/Workspace/GitHub/plexus/chemacs/install.sh
+git clone git@github.com:syl20bnr/spacemacs.git ~/Workspace/github.com/syl20bnr/spacemacs
+git clone git@github.com:hlissner/doom-emacs.git ~/Workspace/github.com/hlissner/doom-emacs
+git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
 
 function make_links -a source_dir target_dir -d "make links for multiple files in the directory"
     for f in $source_dir/*;
