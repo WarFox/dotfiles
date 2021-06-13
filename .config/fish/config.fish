@@ -4,6 +4,7 @@ source $dir/libflags.fish
 
 # Get gnu grep in path
 fish_add_path /usr/local/opt/grep/libexec/gnubin
+fish_add_path /usr/local/opt/libxml2/bin
 
 # rbenv
 status is-interactive; and source (rbenv init - | psub)

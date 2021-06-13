@@ -2,17 +2,7 @@
 
 git clone git@github.com:syl20bnr/spacemacs.git ~/Workspace/github.com/syl20bnr/spacemacs
 git clone git@github.com:hlissner/doom-emacs.git ~/Workspace/github.com/hlissner/doom-emacs
-git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
-
-function make_links -a source_dir target_dir -d "make links for multiple files in the directory"
-    for f in $source_dir/*;
-        if test -f $f
-            set _command ln -s $f $target_dir/(basename $f)
-            echo $_command
-            eval "$_command"
-        end
-    end
-end
+git clone git@github.com:plexus/chemacs2.git ~/.emacs.d
 
 function setup_softlinks
   ln -s ~/Workspace/Personal/spacemacs.d ~/.spacemacs.d
@@ -28,18 +18,15 @@ function setup_softlinks
   ln -s (pwd)/.skhdrc ~/.skhdrc
 
   ln -s (pwd)/.config/alacritty/alacritty.yml ~/.config/alacritty/
-
-  make_links (pwd)/.config/fish ~/.config/fish
 end
 
+function setup_fish
+  ln -vs (pwd)/.config/fish/*.fish ~/.config/fish
+  ln -vs (pwd)/.config/fish/fish_plugins ~/.config/fish/fish_plugins
+  ln -vs (pwd)/.config/fish/conf.d/*.fish ~/.config/fish/conf.d
+  ln -vs (pwd)/.config/fish/functions/*.fish ~/.config/fish/functions
 
-function setup_oh_my_tmux
-    git clone https://github.com/gpakosz/.tmux.git ~/Workspace/GitHub/.tmux
-    ln -s ~/Workspace/GitHub/.tmux/.tmux.conf ~/.tmux.conf
-    ln -s ~/Workspace/Personal/dotfiles/.tmux.conf.local ~/.tmux.conf.local
-    mkdir -p ~/.tmux/plugins/
-    brew install tmux
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 end
 
 # Set up global git-ignore
@@ -51,5 +38,4 @@ brew bundle
 
 setup_softlinks
 yarn_install_stuff
-omf_install_stuff
 gem_install_stuff

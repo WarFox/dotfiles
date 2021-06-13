@@ -15,10 +15,6 @@ function yarn_install_stuff
    yarn global add vmd js-beautify tern
 end
 
-function omf_install_stuff
-   omf install z simple-ass-prompt
-end
-
 function gem_install_stuff
     gem install bundler
 end
