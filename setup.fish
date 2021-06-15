@@ -1,12 +1,14 @@
 #!/usr/bin/env fish
 
-git clone git@github.com:syl20bnr/spacemacs.git ~/Workspace/github.com/syl20bnr/spacemacs
-git clone git@github.com:hlissner/doom-emacs.git ~/Workspace/github.com/hlissner/doom-emacs
-git clone git@github.com:plexus/chemacs2.git ~/.emacs.d
+git clone git@github.com:syl20bnr/spacemacs ~/Workspace/github.com/syl20bnr/spacemacs
+git clone git@github.com:hlissner/doom-emacs ~/Workspace/github.com/hlissner/doom-emacs
+git clone git@github.com:plexus/chemacs2 ~/.emacs.d
+git clone git@github.com:warfox/spacemacs.d ~/Workspace/github.com/warfox/spacemacs.d
+git clone git@github.com:warfox/doom.d ~/Workspace/github.com/warfox/doom.d
 
 function setup_softlinks
-  ln -s ~/Workspace/Personal/spacemacs.d ~/.spacemacs.d
-  ln -s ~/Workspace/Personal/doom.d ~/.doom.d
+  ln -s ~/Workspace/github.com/warfox/spacemacs.d ~/.spacemacs.d
+  ln -s ~/Workspace/github.com/warfox/doom.d ~/.doom.d
 
   # sym link dotfiles
   ln -s (pwd)/.chunkwmrc ~/.chunkwmrc
@@ -34,8 +36,8 @@ git config --global core.excludesfile ~/.gitignore_global
 
 source ./brew_install_apps.fish
 
-brew bundle
-
 setup_softlinks
 yarn_install_stuff
 gem_install_stuff
+
+brew bundle

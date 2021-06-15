@@ -3,5 +3,10 @@
 I just want to start tracking my dotfiles.
 
 * Steps
-- run =setup_brew_and_fish.sh=
-- run =setup.fish= from fish shell
+
+  #+begin_src sh
+    git clone git@github.com:warfox/dotfiles ~/Workspace/github.com/warfox/dotfiles
+    cd ~/Workspace/github.com/warfox/dotfiles
+    setup_brew_and_fish.sh
+    setup.fish
+  #+end_src
