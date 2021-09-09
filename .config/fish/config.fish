@@ -5,6 +5,7 @@ source $dir/libflags.fish
 # Get gnu grep in path
 fish_add_path /usr/local/opt/grep/libexec/gnubin
 fish_add_path /usr/local/opt/libxml2/bin
+fish_add_path ~/.cargo/bin
 
 # rbenv
 status is-interactive; and source (rbenv init - | psub)
@@ -17,6 +18,9 @@ source (starship init fish | psub)
 
 # direnv
 source (direnv hook fish | psub)
+
+# zoxide
+source (zoxide init fish | psub)
 
 # pyenv
 set -Ux PYENV_ROOT $HOME/.pyenv
