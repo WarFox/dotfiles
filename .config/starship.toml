@@ -11,14 +11,8 @@ format = "$all"
 [aws]
 symbol = "aws:"
 
-[battery]
-full_symbol = "🔋"
-discharging_symbol = "⚡"
-charging_symbol = "🔌"
-
 [[battery.display]]
 threshold = 20
-style = "bold red"
 
 [character]
 success_symbol = "[➜](bold green) 😃"
@@ -26,43 +20,4 @@ error_symbol = "[✗](bold red) 🤕"
 
 [directory]
 truncation_length = 8
-
-[git_branch]
-symbol = ":"
-truncation_length = 63
-truncation_symbol = "..."
-style = "bold purple"
-
-[git_state]
-format = '[\($state( $progress_current of $progress_total)\)]($style) '
-cherry_pick = "🍒 PICKING"
-
-[git_status]
-format= '([\[$all_status$ahead_behind\]]($style)) '
-conflicted = "⚔"
-ahead = "🏎💨${count}"
-behind = "🐢$count}"
-diverged = "🔱 ⇡${ahead_count}⇣${behind_count}"
-untracked = "🤷"
-stashed = "📦"
-modified = "📝"
-staged = "++$count"
-renamed = "📛"
-deleted = "🗑"
-style =  "bold red"
-
-[hostname]
-ssh_only = true
-trim_at = "-"
-style = "bold dimmed white"
-disabled = false
-
-[nodejs]
-format = "via [$symbol($version )]($style)"
-symbol = "⬢ "
-
-[username]
-format = "[$user]($style) "
-style_user = "bold dimmed blue"
-style_root = "black bold"
-show_always = true
+truncate_to_repo = false
