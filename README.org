@@ -1,12 +1,18 @@
-#+TITLE: Deepu Mohan Puthrote's dotfiles
+#+title: Deepu Mohan Puthrote's dotfiles
 
-I just want to start tracking my dotfiles.
+This is how I manage my configurations between multiple laptops. Works with
+macOS only for now.
 
-* Steps
+This installs and setups most packages and tools I use, importatly =emacs= and
+=fish= shell.
+
+* Install
 
   #+begin_src sh
-    git clone git@github.com:warfox/dotfiles ~/Workspace/github.com/warfox/dotfiles
-    cd ~/Workspace/github.com/warfox/dotfiles
-    setup_brew_and_fish.sh
-    setup.fish
+    curl -sLf https://raw.githubusercontent.com/WarFox/dotfiles/master/setup.fish | fish
+  #+end_src
+
+
+  #+begin_src sh
+    curl -sLf https://raw.githubusercontent.com/WarFox/dotfiles/master/setup.sh | sh
   #+end_src

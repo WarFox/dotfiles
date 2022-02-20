@@ -1,43 +1,74 @@
 #!/usr/bin/env fish
 
-git clone git@github.com:syl20bnr/spacemacs ~/Workspace/github.com/syl20bnr/spacemacs
-git clone git@github.com:hlissner/doom-emacs ~/Workspace/github.com/hlissner/doom-emacs
-git clone git@github.com:plexus/chemacs2 ~/.emacs.d
-git clone git@github.com:warfox/spacemacs.d ~/Workspace/github.com/warfox/spacemacs.d
-git clone git@github.com:warfox/doom.d ~/Workspace/github.com/warfox/doom.d
+set fish_trace 1
 
-function setup_softlinks
-  ln -s ~/Workspace/github.com/warfox/spacemacs.d ~/.spacemacs.d
-  ln -s ~/Workspace/github.com/warfox/doom.d ~/.doom.d
+function _clone_repos
 
-  # sym link dotfiles
-  ln -s (pwd)/.chunkwmrc ~/.chunkwmrc
-  ln -s (pwd)/.emacs-profile ~/.emacs-profile
-  ln -s (pwd)/.emacs-profiles.el ~/.emacs-profiles.el
-  ln -s (pwd)/.gitignore_global ~/.gitignore_global
-  ln -s (pwd)/.jsbeautifyrc ~/.jsbeautifyrc
-  ln -s (pwd)/.sift.conf ~/.sift.conf
-  ln -s (pwd)/.skhdrc ~/.skhdrc
-
-  ln -s (pwd)/.config/alacritty/alacritty.yml ~/.config/alacritty/
+  git clone git@github.com:syl20bnr/spacemacs ~/Workspace/github.com/syl20bnr/spacemacs
+  git clone git@github.com:hlissner/doom-emacs ~/Workspace/github.com/hlissner/doom-emacs
+  git clone git@github.com:plexus/chemacs2 ~/.emacs.d
+  git clone git@github.com:WarFox/spacemacs.d ~/Workspace/github.com/WarFox/spacemacs.d
+  git clone git@github.com:WarFox/doom.d ~/Workspace/github.com/WarFox/doom.d
+  git clone git@github.com:dracula/alacritty ~/Workspace/github.com/dracula/alacritty
 end
 
-function setup_fish
-  ln -vs (pwd)/.config/fish/*.fish ~/.config/fish
-  ln -vs (pwd)/.config/fish/fish_plugins ~/.config/fish/fish_plugins
-  ln -vs (pwd)/.config/fish/conf.d/*.fish ~/.config/fish/conf.d
-  ln -vs (pwd)/.config/fish/functions/*.fish ~/.config/fish/functions
+function _setup_symlinks
+  ln -vfs ~/Workspace/github.com/WarFox/spacemacs.d/ ~/.spacemacs.d
+  ln -vfs ~/Workspace/github.com/WarFox/doom.d/ ~/.doom.d
+  ln -vfs $DOTFILES/.config/alacritty/alacritty.yml ~/.config/alacritty
+  ln -vfs $DOTFILES/.config/starship.toml ~/.config/starship.toml
 
+  set exclude ".git" ".gitignore" ".gitignore_global" ".DS_Store"
+  for f in .*
+      if test -f $f
+          if not contains $f $exclude
+              ln -vfs $DOTFILES/$f ~
+          end
+      end
+  end
+end
+
+function _setup_fish
   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+  ln -vfs $DOTFILES/.config/fish/*.fish ~/.config/fish
+  ln -vfs $DOTFILES/.config/fish/fish_plugins ~/.config/fish/fish_plugins
+  ln -vfs $DOTFILES/.config/fish/conf.d/*.fish ~/.config/fish/conf.d
+  ln -vfs $DOTFILES/.config/fish/functions/*.fish ~/.config/fish/functions
+  fisher update
 end
 
-# Set up global git-ignore
-git config --global core.excludesfile ~/.gitignore_global
+function yarn_install_stuff
+    npm install -g vmd js-beautify tern
+end
 
-source ./brew_install_apps.fish
+function gem_install_stuff
+    gem install bundler
+end
 
-setup_softlinks
-yarn_install_stuff
-gem_install_stuff
+function main -a _name
 
-brew bundle
+   switch $_name
+       case "fish"
+           _setup_fish
+       case "symlinks"
+           _setup_symlinks
+       case "*"
+          _clone_repos
+          _setup_fish
+          _setup_symlinks
+
+          curl -sLf https://spacevim.org/install.sh | bash
+
+          # Set up global git-ignore
+          git config --global core.excludesfile ~/.gitignore_global
+
+          # add  /usr/local/bin/fish to /etc/shells
+          set chsh_command chsh -s /usr/local/bin/fish
+          echo "to change default shell run $chsh_commmand"
+
+          brew bundle -v
+    end
+end
+
+main $argv
