@@ -7,29 +7,19 @@ fish_add_path /usr/local/opt/grep/libexec/gnubin
 fish_add_path /usr/local/opt/libxml2/bin
 fish_add_path ~/.cargo/bin
 
-# rbenv
-status is-interactive; and source (rbenv init - | psub)
-
-# jenv
-status is-interactive; and source (jenv init - | psub)
-
-# blast off with starship
-source (starship init fish | psub)
-
-# direnv
-source (direnv hook fish | psub)
-
-# zoxide
-source (zoxide init fish | psub)
-
 # pyenv
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT
 status is-login; fish_add_path $PYENV_ROOT/shims
-status is-interactive; and source (pyenv init - | psub)
 
-# pyenv-virtualenv
-status is-interactive; and source (pyenv virtualenv-init - | psub)
+status is-interactive \
+    ; and source (rbenv init - | psub) \
+    ; and source (jenv init - | psub) \
+    ; and source (starship init fish | psub) \
+    ; and source (direnv hook fish | psub) \
+    ; and source (zoxide init fish | psub) \
+    ; and source (pyenv virtualenv-init - | psub) \
+    ; and source (pyenv init - | psub)
 
 # local settings and overrides
 if test -f $dir/config.local.fish
