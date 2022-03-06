@@ -19,3 +19,8 @@ function glue-delete-jobs-by-pattern -a pattern
     aws glue get-jobs | jq '.Jobs[].Name' | rg $pattern | xargs -d '\n' wc -l
     xargs -d '\n' aws glue delete-job --job-name
 end
+
+function glue-get-table-partitions -a database table max-items
+    set -q max-items[1]; or set max-items 100
+    aws glue get-partitions --database-name $database --table-name $table --max-items $max-items | jq -r '.Partitions[] | [.Values[],.StorageDescriptor.Location]'
+end
