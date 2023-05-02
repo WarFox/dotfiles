@@ -111,7 +111,7 @@ window:
   #   - OnlyRight
   #   - Both
   #   - None (default)
-  #option_as_alt: None
+  option_as_alt: OnlyLeft
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -302,10 +302,14 @@ live_config_reload: true
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
 shell:
- program: /usr/local/bin/fish
- args:
-   - --login
-   - -c tmux new-session -A -s main # start new session of tmux if main session is not available
+  program: /usr/local/bin/zellij
+  args:
+    - attach
+    - --create
+    - main
+    - options
+    - --default-shell
+    - /usr/local/bin/fish
 
 # Startup directory
 #

@@ -10,6 +10,7 @@ fish_add_path /usr/local/opt/grep/libexec/gnubin
 fish_add_path /usr/local/opt/libxml2/bin
 fish_add_path ~/.cargo/bin
 fish_add_path /opt/local/bin
+fish_add_path /usr/local/bin
 
 # pyenv
 set -Ux PYENV_ROOT $HOME/.pyenv
