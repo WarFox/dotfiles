@@ -11,9 +11,6 @@ format = "$all"
 [aws]
 symbol = "aws:"
 
-[[battery.display]]
-threshold = 20
-
 [character]
 success_symbol = "[➜](bold green) 😃"
 error_symbol = "[✗](bold red) 🤕"
@@ -21,3 +18,16 @@ error_symbol = "[✗](bold red) 🤕"
 [directory]
 truncation_length = 8
 truncate_to_repo = false
+
+# we disable slow services
+[scala] # scalac is slow
+disabled = true
+
+[java] # slow
+disabled = true
+
+[battery]
+disabled = true
+
+[[battery.display]]
+threshold = 20
