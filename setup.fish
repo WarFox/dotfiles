@@ -15,7 +15,7 @@ end
 function _setup_symlinks
   ln -vfs ~/Workspace/github.com/WarFox/spacemacs.d/ ~/.spacemacs.d
   ln -vfs ~/Workspace/github.com/WarFox/doom.d/ ~/.doom.d
-  ln -vfs $DOTFILES/.config/alacritty/alacritty.yml ~/.config/alacritty
+  ln -vfs $DOTFILES/.config/alacritty/alacritty.toml ~/.config/alacritty
   ln -vfs $DOTFILES/.config/starship.toml ~/.config/starship.toml
 
   set exclude ".git" ".gitignore" ".gitignore_global" ".DS_Store"
@@ -26,6 +26,10 @@ function _setup_symlinks
           end
       end
   end
+end
+
+function setup_nu
+    ln -vfs $DOTFILES/.config/fish/*.fish ~/.config/fish
 end
 
 function _setup_fish
@@ -57,8 +61,6 @@ function main -a _name
           _clone_repos
           _setup_fish
           _setup_symlinks
-
-          curl -sLf https://spacevim.org/install.sh | bash
 
           # Set up global git-ignore
           git config --global core.excludesfile ~/.gitignore_global
