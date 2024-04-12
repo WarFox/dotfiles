@@ -1,8 +1,11 @@
-(("default" . ((user-emacs-directory . "~/Workspace/github.com/hlissner/doom-emacs")
+(("default" . ((user-emacs-directory . "~/Workspace/github.com/doomemacs/doomemacs")
                (env . (("DOOMDIR" . "~/.doom.d")))))
 
  ("spacemacs" . ((user-emacs-directory . "~/Workspace/github.com/syl20bnr/spacemacs")
-                         (env . (("SPACEMACSDIR" . "~/.spacemacs.d")))))
+                 (env . (("SPACEMACSDIR" . "~/.spacemacs.d")))))
 
- ("doom" . ((user-emacs-directory . "~/Workspace/github.com/hlissner/doom-emacs")
+ ("warmacs" . ((user-emacs-directory . "~/Workspace/github.com/WarFox/warmacs/")
+               (env . (("WARMACSDIR" . "~/.warmacs.d")))))
+
+ ("doom" . ((user-emacs-directory . "~/Workspace/github.com/doomemacs/doomemacs")
             (env . (("DOOMDIR" . "~/.doom.d"))))))
