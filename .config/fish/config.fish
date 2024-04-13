@@ -33,12 +33,6 @@ end
 
 alias ls lsd
 
-function lolbanner
-    echo
-    figlet -c -f ~/.local/share/fonts/figlet-fonts/3d.flf $argv | lolcat
-    echo
-end
-
 # local settings and overrides
 if test -f $dir/config.local.fish
     source $dir/config.local.fish

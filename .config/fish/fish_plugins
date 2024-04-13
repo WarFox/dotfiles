@@ -2,3 +2,4 @@ jhillyerd/plugin-git
 oh-my-fish/plugin-emacs
 jorgebucaran/fisher
 jorgebucaran/nvm.fish
+reitzig/sdkman-for-fish@v2.0.0
