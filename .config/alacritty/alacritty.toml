@@ -1,7 +1,6 @@
-import = [
-  "~/Workspace/github.com/dracula/alacritty/dracula.toml",
-]
+[general]
 live_config_reload = true
+import = ["~/Workspace/github.com/dracula/alacritty/dracula.toml"]
 
 [bell]
 animation = "EaseOutExpo"
@@ -553,16 +552,15 @@ multiplier = 3
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
-[shell]
+[terminal]
+
+[terminal.shell]
 args = [
   "attach",
   "--create",
-  "main",
-  "options",
-  "--default-shell",
-  "/usr/local/bin/fish",
+  "main"
 ]
-program = "/usr/local/bin/zellij"
+program = "/opt/homebrew/bin/zellij"
 
 [window]
 decorations = "full"

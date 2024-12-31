@@ -1,13 +1,14 @@
 shell-integration = fish
+# only applies to the first terminal surface created
+initial-command = /opt/homebrew/bin/zellij attach --create main
+# subsequent terminal surfaces will use this
+command = /opt/homebrew/bin/zellij
 
-initial-command = "/opt/homebrew/bin/zellij attach --create main options --default-shell /opt/hombrew/bin/fish"
-
-theme = dracula+
-
-font-family = "Hack Nerd Font"
-
-mouse-hide-while-typing = true
-window-decoration = true
-
-background-opacity = 0.8
 background-blur-radius = 20
+background-opacity = 0.8
+cursor-style = block
+font-family = "Hack Nerd Font"
+macos-titlebar-style = transparent
+mouse-hide-while-typing = true
+theme = dracula+
+window-save-state = always
