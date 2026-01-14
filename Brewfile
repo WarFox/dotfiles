@@ -34,7 +34,7 @@ brew "clojure/tools/clojure"
 brew "cmake"
 brew "coreutils"
 brew "coursier/formulas/coursier"
-brew "d12frosted/emacs-plus/emacs-plus@30", args: ["with-debug", "with-mailutils", "with-modern-icon", "with-native-comp", "with-xwidgets", "with-imagemagick", "with-poll"]
+brew "d12frosted/emacs-plus/emacs-plus@31", args: ["with-debug", "with-mailutils", "with-xwidgets"]
 brew "direnv"
 brew "dog" # dns lookup
 brew "exercism"
@@ -99,8 +99,9 @@ brew "procs"
 brew "pstree"
 brew "rbenv"
 brew "ripgrep"
-brew "roswell"
+brew "roswell" # lisp environment manager
 brew "ruby-build"
+brew "ruff"
 brew "rustup-init"
 brew "sbcl"
 brew "sbt"
@@ -113,21 +114,22 @@ brew "teamookla/speedtest/speedtest"
 brew "terracognita"
 brew "terraform-docs"
 brew "terraform-ls"
-brew "texinfo"
-brew "tfenv"
-brew "tfsec"
-brew "tig"
-brew "tldr"
-brew "tree"
-brew "tree-sitter"
-brew "turbot/tap/steampipe"
+brew "texinfo" # for emacs info pages
+brew "tfenv" # terraform version manager
+brew "tfsec" # terraform security scanner
+brew "tig" # ncurses-based git client
+brew "tldr" # simplified man page
+brew "tree" # enhanced ls command
+brew "tree-sitter" # incremental parsing system
+brew "turbot/tap/steampipe" # cloud data query tool
 brew "unbound" # recursive DNS resolver
-brew "vale"
-brew "wget"
-brew "yarn"
-brew "zellij"
-brew "zlib"
-brew "zoxide"
+brew "uv" # python package and project manager
+brew "vale" # prose linter
+brew "wget" # network downloader
+brew "yarn" # node package manager
+brew "zellij" # terminal workspace manager
+brew "zlib" # compression lib
+brew "zoxide" # smarter cd command
 
 # casks #
 
