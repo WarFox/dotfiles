@@ -9,22 +9,15 @@ source $dir/libflags.fish
 fish_add_path /usr/local/opt/grep/libexec/gnubin
 fish_add_path /usr/local/opt/libxml2/bin
 fish_add_path ~/.cargo/bin
-fish_add_path /opt/local/bin
-fish_add_path /usr/local/bin
-
-# pyenv
-set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path /opt/homebrew/bin
 
 status is-interactive \
     ; and source (rbenv init - | psub) \
     ; and source (starship init fish | psub) \
     ; and source (direnv hook fish | psub) \
-    ; and source (zoxide init fish | psub) \
-    ; and source (pyenv virtualenv-init - | psub) \
-    ; and source (pyenv init - | psub)
+    ; and source (zoxide init fish | psub)
 
-[ -s "/usr/local/opt/jabba/share/jabba/jabba.fish" ]; and source "/usr/local/opt/jabba/share/jabba/jabba.fish"
-
+# Setup GPP on tty
 set -x GPG_TTY (tty)
 
 if test -z (pgrep ssh-agent | tr '\n' ',')
@@ -32,6 +25,7 @@ if test -z (pgrep ssh-agent | tr '\n' ',')
 end
 
 alias ls lsd
+alias vim nvim
 
 # local settings and overrides
 if test -f $dir/config.local.fish

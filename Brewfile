@@ -97,8 +97,6 @@ brew "poetry"
 brew "poppler" # pdf rendering lib
 brew "procs"
 brew "pstree"
-brew "pyenv"
-brew "pyenv-virtualenv"
 brew "rbenv"
 brew "ripgrep"
 brew "roswell"
