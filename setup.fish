@@ -17,6 +17,9 @@ function _setup_symlinks
   ln -vfs ~/Workspace/github.com/WarFox/doom.d/ ~/.doom.d
   ln -vfs $DOTFILES/.config/alacritty/alacritty.toml ~/.config/alacritty
   ln -vfs $DOTFILES/.config/starship.toml ~/.config/starship.toml
+  ln -vs ~/Workspace/github.com/WarFox/dotfiles/.mcp.json ~/.mcp.json
+  mkdir ~/.copilot/
+  ln -vs ~/Workspace/github.com/WarFox/dotfiles/.mcp.json ~/.copilot/mcp-config.json
 
   set exclude ".git" ".gitignore" ".gitignore_global" ".DS_Store"
   for f in .*

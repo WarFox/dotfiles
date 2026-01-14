@@ -1,0 +1,60 @@
+{
+  "mcpServers": {
+    "clojure-mcp": {
+      "type": "stdio",
+      "command": "/opt/homebrew/bin/clojure",
+      "args": [
+        "-Tmcp",
+        "start",
+        ":config-profile",
+        ":cli-assist"
+      ],
+      "env": {},
+      "tools": [
+        "*"
+      ]
+    },
+    "chrome-devtools": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "tools": [
+        "*"
+      ]
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "tools": [
+        "*"
+      ]
+    },
+    "sequential-thinking": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "env": {},
+      "tools": [
+        "*"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "tools": [
+        "*"
+      ]
+    }
+  }
+}
