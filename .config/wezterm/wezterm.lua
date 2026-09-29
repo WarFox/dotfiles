@@ -10,9 +10,10 @@ config.font_size = 12.0
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 20
 config.window_padding = { left = 8, right = 8, top = 8, bottom = 8 }
+config.window_decorations = "RESIZE"
 
 config.use_fancy_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = false
 
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
