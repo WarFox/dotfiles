@@ -1,14 +1,17 @@
 shell-integration = fish
-# only applies to the first terminal surface created
-initial-command = /opt/homebrew/bin/zellij attach --create main
-# subsequent terminal surfaces will use this
-command = /opt/homebrew/bin/zellij
 
-background-blur-radius = 20
-background-opacity = 0.8
+#background-blur-radius = 20
+#background-opacity = 0.90
+
 cursor-style = block
 font-family = "Hack Nerd Font"
 macos-titlebar-style = transparent
 mouse-hide-while-typing = true
+copy-on-select = true
 theme = dracula+
 window-save-state = always
+keybind = shift+enter=text:\n
+
+window-decoration = true
+confirm-close-surface = false
+
